@@ -1,0 +1,210 @@
+<!Doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" type="text/css" href="joke.css">
+        <!--<link rel="stylesheet" type="text/css" href="Name: Bootstrap 4, Font awesome 4, Font Awesome 5 Free & Pro snippets
+        Id: thekalinga.bootstrap4-vscode
+        Description: Bootstrap 4 snippets based on documentation + Font awesome 4 + Font Awesome 5 Free & Pro snippets
+        Version: 6.1.0
+        Publisher: Ashok Koyi">-->
+        <title>www.eventsAnchor.com/welcome</title>
+        <link href="loca.png" rel="icon">
+    </head>
+    <body>
+        <address style="background-color:aqua;">
+            <h3><img src="loca.png" width="8px" height="12px"> 33, lagos-street itire-ikate off karounwi B/stp.<br />
+               <a href="mail to:rockybunm@yahoomail.com"><img src="message.jpg" width="8px" height="12px">www.yahoo.com/joke</a><br />
+               <img src="call.jpg" width="8px" height="12px">+23480139357520</h3>
+               <figure align="center">
+                  <img src="logo (2).jpg" widh="" height="">
+               </figure>
+            <i class="fa fa-align-center" aria-hidden="true"></i>
+            <form action=""  method="get " class="search">
+                <input type="search" name="search" placeholder="look up our luxuries of product" size="40" maxlength="25">
+                <button><img src="search-icon.jpg" width="25" height="20"></button>
+            </form>
+        </address>
+        <header>
+            <nav>
+                <ul>
+                    <a href="#"><li>Home</li></a>
+                    <a href=""><li>Events</li></a>
+                    <a href="photo.html"><li>Photos</li></a>
+                    <a href=""><li>Events-Videos</li></a>
+                    <a href=""><li>Decorators-Corner</li></a>
+                                    <a href=""><li>Traditonal-Decor</li></a>
+                                    <a href=""><li>Modern-Decor</li></a>
+                                    <a href=""><li>Trendy</li></a>
+                                    <a href=""><li>About-Decorator</li></a>
+                    <a href=""><li>About-Us</li></a>
+                </ul>
+            </nav>
+            <video src="jov.mp4" format="mp4" loop controls width="250" height="250" poster="lacream.jpg"></video>
+            <fieldset >
+                <legend>Sign-In</legend>
+                <form action="" method="" id="form">
+                    <h3 id="sign_info">enter username and password</h3>
+                   <div class="username">USERNAME:<input type="username" id="username" maxlength="25" size="15" title="please kindly enter a six digit character"></div> 
+                   <div class="password">PASSWORD:<input type="password" maxlength="25" size="15" title="kindly enter your ten digit secure pin" id='password'></div>
+                   <button href="#" type="button" id="login">Login</button><button type='button' id='show_password' class='passCold change'>Show Password</button>
+                   <p>If you have no account with us kindly <a href="#" onclick="newUser()" id="newUser">SIGN-UP</a></p>
+                </form> 
+                <!--<audio src="birthdaySong.mp3" autoplay controls width="">music</audio>-->         
+            </fieldset>    
+        </header>
+        <footer style="background-color: rgba(185, 82, 105, 0.904); color:cornsilk;">
+            <div class="endline">
+               <p>Built With <img src="heart.png" width="25" height="15"> By SaydoTech.</p>
+               <a href="www.facebook.com/Abiodun.onaolapo712"><img src="facebook.jpg" width="" height=""></a>
+               <a href=""><img src="whatsapp.jpg" width="" height=""></a>
+               <a href=""><img src="twitter.jpg" width="" height=""></a>
+               <a href=""><img src="instagam.jpg" width="" height=""></a>
+            </div>
+        </footer>
+
+        <script>
+
+                document.getElementById("show_password").addEventListener("click", function(){
+                      
+                       // e.preventDefault();
+                        const password = document.getElementById('password');
+                        let passColor = document.getElementById("show_password");
+                        let passValue = password.value;
+                        //alert(passValue);
+                        passValue.trim();
+                        passValue = passValue.trim();
+                        //alert(passValue.length);
+                        if(passValue.length > 0){
+                            if(password.type == 'password'){
+                            passColor.innerText = 'Hide Password'
+                            password.type = 'text';
+                            this.style.backgroundColor ="orange";
+
+                        }else {
+                            document.getElementById("show_password") 
+                            passColor.innerText = 'Show Password'
+                            password.type = 'password';
+                            this.style.backgroundColor = "green";
+                        } 
+                        //check if passvalue and username is null
+                       
+                    }       
+                })
+                let login = document.getElementById('login')
+                        login.addEventListener('click', function(){
+                            let username = document.getElementById('username').value;
+                            username.trim();
+                            let password = document.getElementById('password');
+                            let passValue = password.value;
+                            passValue.trim();
+                            if(username == 0 && passValue == 0){
+                                let sign_info = document.getElementById('sign_info');
+                                sign_info.innerText = 'fill the space provided';
+                                sign_info.style.background = 'white';
+                                sign_info.style.color = 'red';
+                            }else{
+                                let dataFile = localStorage.getItem('reg_user');
+                                if(dataFile == null || dataFile == undefined){
+                                    //nothing in the store
+                                    const reg_user = [
+                                    {
+                                        'name' : 'wale',
+                                        'password' : 'ade123'
+                                    },
+                                    {
+                                        'name' : 'emma',
+                                        'password': 'ojo',
+                                    }
+                                ]
+                                datafile = JSON.stringify(reg_user);
+                                localStorage.setItem('dataFile', datafile);
+                                const copy_user = []
+                                for(let i=0; i<reg_user.length; i++){
+                                    if(reg_user[i].name == username && reg_user[i].password == passValue){
+                                        copy_user.push(1);
+                                        sign_info.innerText =  'welcome ' + username;
+                                        sign_info.style.backgroundColor = 'green';
+                                        sign_info.style.color = 'white';
+                                        break;
+                                    }
+                                    if(!copy_user.includes(1)){
+                                        sign_info.innerText = 'you have not registered! '
+                                        sign_info.style.color = 'red'; 
+                                        login.setAttribute('onclick', 'newUser()');
+                                    }     
+                                }
+                            }
+                        }
+                        })
+                        function newUser(){
+                            let display = document.getElementById('form');
+                                            let formCode = document.createElement('div');
+                                            formCode = `<div class="wrapper">
+                                                          <h3 id="info">Kindly fill the form to subscribe</h3>
+                                                          <form action="" method="">
+                                                               <select class="select">
+                                                                   <option>mr</option>
+                                                                   <option>mrs</option>
+                                                                   <option>miss</option>
+                                                                   <option>master</option>
+                                                                </select>
+                                                               <div class="name">
+                                                                  <div class="">FIRST NAME:<input type="text" placeholder="enter name" class="fname" id="fname"></div>
+                                                               </div>
+                                                               <div class="lastname">
+                                                                  <div class="">LAST NAME:<input type="text" placeholder="enter last name" class="lname" id="lname"></div>
+                                                               </div>
+                                                               <div class="username">
+                                                                  <div class="">USERNAME:<input type="text" placeholder="enter username" class="uname" id="uname"></div>
+                                                               </div>
+                                                               <div class="password">
+                                                                  <div class="">PASSWORD:<input type="password" placeholder="enter user password" class="password" id="password"></div>
+                                                               </div>
+                                                               <div class="button">
+                                                                  <button href="#" type="button" id="jlog">Sign Up</button>
+                                                               </div>
+                                                            <form>
+                                                
+                                                </div>`
+                                                display.innerHTML = formCode;
+                                                let userV = document.getElementById('jlog');
+                                                userV.setAttribute('onclick', 'register()')
+                        }
+                        //sign up form verification
+                        function register(){
+                            let info_sign = document.getElementById('info');
+                            let firstName = document.getElementById('fname').value;
+                            let lastName = document.getElementById('lname').value;
+                            let user = document.getElementById('uname').value;
+                            let password = document.getElementById('password').value;
+                            firstName.trim();
+                            lastName.trim();
+                            user.trim();
+                            password.trim();
+                            let datafile = localStorage.getItem('dataFile');
+                            JSON.parse(datafile);
+                            if(firstName == 0 & lastName == 0 & user == 0 & password == 0){
+                                info_sign.innerText = 'field can not be empty';
+                                info_sign.style.background = 'red';
+                            }else{
+                                info_sign.innerText = firstName + ' welcome thanks for registering';
+                            }
+                            //pick the user from storage and match it with new entry
+                            /*
+                            *could not get the user singly as an array
+                            */
+                            /*const userData = [];
+                            userData.push(datafile)
+                            for(let i=0; i<datafile.length; i++){
+                                console.log(datafile[i]['name'])
+                            }*/
+                            
+                                
+                            
+                        }
+        </script>
+    </body>
+    
+</html>

@@ -1,0 +1,83 @@
+*{
+    margin:auto;
+    padding:auto;
+}
+address{
+    background:linear-gradient(to right, pink, brown);
+}
+h3, footer{
+    text-align: center;
+}
+h3 a{
+    text-decoration: none;
+}
+header{
+    background: url(breakfast.jpg);
+    height:480px;
+    margin-top: -100px; 
+}
+header ul{
+    margin:0;
+    padding:0;
+}
+header li{
+    margin:5px;
+    padding:5px;
+    display:inline;
+    text-decoration: none;
+}
+header a{
+    text-decoration: none;
+    color:white;
+}
+fieldset{
+    float:right;
+    margin:50px 50px 0 0;
+    width:720px;
+    height:380px;
+}
+fieldset form, footer{
+    text-align: center;
+}
+.username{
+    padding:50px 0 20px 0;
+    
+}
+.username input, .password input, .fname, .lname, .uname, .password{
+    padding:15px 60px 15px 60px;
+}
+button{
+    margin:0 20px 120px 120px;
+}
+.search{
+    margin-top: -50px;
+}
+.search input{
+    margin:0 0 0 50px;
+    padding:10px 0 10px 30px;
+}
+.search button{
+    margin-left:-45px;
+    padding:-2px 10px 5px 10px;
+}
+.endline{
+    padding-top: 10px;
+}
+.passCold{
+    background-color: red;
+}
+.passCold:focus{
+    background-color: rgb(110, 187, 75);
+}
+
+/*
+*javascript form styling
+*/
+.wrapper{
+    margin:10px 50px 0 0;
+    width:720px;
+    height:380px; 
+}
+.name{
+    margin:1em;
+}
